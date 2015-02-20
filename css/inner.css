@@ -15,12 +15,15 @@
     font-style: normal;
 
 }
+
+iframe { border: none; outline: none; }
 	
 body {
 	background-image:url(../img/bground2.jpg);
 	margin: 0px;
 	padding: 0px;
 	background-repeat:repeat-x;
+    background-color: #f0ece9 ;
 	}
 	
 #main_wrapper {
@@ -37,7 +40,7 @@ img {
 p {
 	font-family:QlassikBoldRegular;
 	font-size:16px;
-	color: #525252;
+	color: #666666;
 	line-height: 18px;
 	font-weight: normal;
 	}
@@ -137,7 +140,7 @@ div.hr {
 .intro_text {
 	font-family:QlassikBoldRegular;
 	font-size:16px;
-	color: #525252;
+	color: #666666;
 	line-height: 18px;
 	margin-top: 25px;
 	font-weight: normal;
@@ -152,7 +155,6 @@ div.hr {
 
 #top_phone {
 	float: right;
-	width: 400px;
 	font-family:QlassikBoldRegular;
 	font-size:24px;
 	color: #ded7cf;
@@ -205,8 +207,12 @@ div.hr {
 .benefit_item p, .benefit_item_first p, .benefit_item_right p {
 	font-family:QlassikBoldRegular;
 	font-size:14px;
-	color: #525252;
+	color: #666666;
 	line-height: 16px;
+}
+
+.benefit_item_right a {
+    font-size:14px;
 }
 	
 .download_button {
@@ -335,9 +341,18 @@ div.hr {
 	}
 	
 .full_width ul.gallery li {
-	display: inline;
-	margin: 0 17px 0 0;
+	display: inline-block;
+	margin: 0 15px 0 0;
+    max-width: 32%;
 	}
+
+.full_width ul.gallery li.last {
+    margin: 0;
+}
+
+.full_width ul.gallery li a img {
+    width: 100%;
+}
 	
 #gallery {
 	padding:20px 0 20px 0;
@@ -410,14 +425,15 @@ li {
 	}
 
 .input-submit {
-	background-image: url(../img/subscribe.png);
-	width: 87px;
-	height: 35px;
+	background-image: url(../img/subscribe@2x.png);
 	background-repeat:no-repeat;
 	border: none;
 	cursor: pointer;
 	background-color: transparent;
 	line-height:  42px;
+    background-size: 87px 35px;
+    width: 87px;
+    height: 35px;
 }
 
 input[type=text] {
@@ -461,3 +477,57 @@ border-radius: 3px;
 	text-align:left;
 }
 	
+/*
+==============================================
+Responsive Syling
+==============================================
+*/
+@media all and (max-width: 768px)  {
+    .benefits_wrapper { margin-top: 55px; }
+    #main_wrapper, #footer_container, blockquote { width: 90%; }
+    #main_wrapper, .right_container { background-image: none; }
+    .benefits_wrapper, .benefit_item_first, .benefit_item, .right_container, .right_content, .benefit_item_right, .right_content2, .left_container, .full_width { width: 100%; }
+    .right_container, .right_content2 { float: left; margin-top: 70px; }
+    #video_top { margin: 0px; width: 100%;}
+    .left_container, .right_content, .right_content2 {margin-left: 0px; }
+    .right_content, .right_content2 { padding-top: 50px; }
+    #footer_right { width: 100%; text-align: center; margin-top: 84px;}
+    #footer_left { width: 50%; }
+    #footer_middle { float: right; text-align: center; }
+    #footer_wrapper { min-height: 340px; background-color: #262626; }
+    .full_width:after { clear: both; }
+    pre {
+    clear: left;
+    display: block;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+    #top_phone { font-size: 16px; margin-top: 30px;}
+    .full_width ul.gallery li {
+	margin: 0 0 15px 0 ;
+    max-width: 100%;
+	}
+    .full_width ul.gallery li.last {
+    margin: 0 0 15px 0;
+}
+    .benefit_item img, .benefit_item_first img { max-width: 40px; height: auto; }
+    
+}
+
+@media all and (max-width: 640px)  {
+    input[type="text"] { width: 100px; }
+}
+
+@media all and (max-width: 480px)  {
+    input[type="text"] { width: 100px; }
+    #top_logo { width: 160px; }
+    #top_phone { font-size: 12px; }
+    h1 { font-size: 38px; }
+}
+
+@media all and (max-width: 360px)  {
+    #footer_left, #footer_middle { width: 100%; text-align: center;}
+    #footer_wrapper { min-height: 420px; }
+    #footer_right { margin-top: 44px; }
+    input[type="text"] { width: 170px; }
